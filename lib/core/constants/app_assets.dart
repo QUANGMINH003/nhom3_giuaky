@@ -1,0 +1,1 @@
+/// AppAssets enumenum AppAssets {    scaningGif("assets/gif/scaning.gif"),  ;  const AppAssets(this.value,);  /// AppAssets degeri  final String value;}
