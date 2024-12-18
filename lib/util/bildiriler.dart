@@ -32,7 +32,7 @@ Future<void> bildiri(BuildContext context, String mes) async {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Text("Tamam"))
+            child: const Text("Ok"))
       ],
     ),
     barrierDismissible: true,
@@ -68,7 +68,7 @@ Future<void> bildiriError(
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Text("Tamam"))
+            child: const Text("Ok"))
       ],
     ),
     barrierDismissible: true,
@@ -103,7 +103,7 @@ Future<void> bildiriSucces(
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Text("Tamam"))
+            child: const Text("Ok"))
       ],
     ),
     barrierDismissible: true,
@@ -121,7 +121,7 @@ Future<void> bildiriProgres(BuildContext context , {String? mes}) async {
             height: 10,
           ),
           Text(
-            mes??"İşlem Gerçekleştiriliyor",
+            mes??"Transaction is being processed",
             style: TextStyle(
                 color: Colors.black, fontWeight: FontWeight.w700),
           ),
@@ -157,12 +157,12 @@ Future<bool> bildiriCevap(BuildContext context, String mes,
                 onPressed: () {
                   Navigator.pop(context, false);
                 },
-                child: const Text("Hayır")),
+                child: const Text("No")),
             TextButton(
                 onPressed: () {
                   Navigator.pop(context, true);
                 },
-                child: const Text("Evet"))
+                child: const Text("Yes"))
           ],
         ),
         barrierDismissible: true,
@@ -259,7 +259,7 @@ Future<Map> firmaBilgisiAl(BuildContext context) async {
                       textAlign: TextAlign.center,
                       keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
-                        labelText: "Firma No",
+                        labelText: "Company Number",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
@@ -278,7 +278,7 @@ Future<Map> firmaBilgisiAl(BuildContext context) async {
                       controller: belgeNo,
                       textAlign: TextAlign.center,
                       decoration: const InputDecoration(
-                        labelText: "Belge No",
+                        labelText: "Document Number",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
@@ -293,16 +293,16 @@ Future<Map> firmaBilgisiAl(BuildContext context) async {
             TextButton(
                 onPressed: () {
                   Navigator.pop(context,
-                      {"firmaNo": firmaNo.text, "belgeNo": belgeNo.text});
+                      {"company number": firmaNo.text, "document number": belgeNo.text});
                   firmaNo.clear();
                   belgeNo.clear();
                 },
-                child: const Text("Firmaya Ver"))
+                child: const Text("Give to Company"))
           ],
         ),
         barrierDismissible: true,
       ) ??
-      {"firmaNo": null, "belgeNo": null};
+      {"company number": null, "document number": null};
 }
 
 Future<String?> bildiriStringCevap(BuildContext context, String mes) async {
@@ -353,7 +353,7 @@ Future<String?> bildiriStringCevap(BuildContext context, String mes) async {
               Navigator.pop(context, title.text);
               title.clear();
             },
-            child: const Text("Tamam"))
+            child: const Text("Ok"))
       ],
     ),
     barrierDismissible: true,
@@ -395,7 +395,7 @@ Future<List<String>> bildiriOyuncular(
                           controller: oyuncuAdi[i],
                           textAlign: TextAlign.center,
                           decoration: InputDecoration(
-                            labelText: "Takım ${i + 1}",
+                            labelText: "Set ${i + 1}",
                             border: const OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10.0)),
@@ -414,17 +414,17 @@ Future<List<String>> bildiriOyuncular(
                   for (var element in oyuncuAdi) {
                     oyuncuAdiString.add(element.text.isNotEmpty
                         ? element.text.trim()
-                        : "Oyuncu ${oyuncuAdi.indexOf(element) + 1}");
+                        : "Actor ${oyuncuAdi.indexOf(element) + 1}");
                   }
                   Navigator.pop(context, oyuncuAdiString);
                   title.clear();
                 },
-                child: const Text("Ayarla"))
+                child: const Text("Set"))
           ],
         ),
         barrierDismissible: true,
       ) ??
-      ["Takım1", "Takım2"];
+      ["Team1", "Team2"];
 }
 
 Future<int> bildiriOyuncuSayisi(BuildContext context, String mes) async {
@@ -484,7 +484,7 @@ Future<int> bildiriOyuncuSayisi(BuildContext context, String mes) async {
                     title.clear();
                   }
                 },
-                child: const Text("Ayarla"))
+                child: const Text("Set"))
           ],
         ),
         barrierDismissible: true,
@@ -599,7 +599,7 @@ Future<String> getTextUser(
             onPressed: () {
               Navigator.pop(context, text.text);
             },
-            child: const Text("Tamam"))
+            child: const Text("Ok"))
       ],
     ),
     barrierDismissible: true,
@@ -643,7 +643,7 @@ void hataBildiri(BuildContext context, String mes) {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text("Tamam"))
+              child: const Text("Ok"))
         ],
       ),
     ),
@@ -688,7 +688,7 @@ void succBildiri(BuildContext context, String mes) {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text("Tamam"))
+              child: const Text("Ok"))
         ],
       ),
     ),
